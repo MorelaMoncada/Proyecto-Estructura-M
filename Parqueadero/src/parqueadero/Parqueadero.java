@@ -197,6 +197,29 @@ public class Parqueadero
                                                                   else
                                                                       JOptionPane.showMessageDialog(null,"la pila de servicios es:\n"+objMP.JuntarPila(objp, objpa));
                                                                   break;
+                                                           case 3: if(objp.IsEmpty()==true)//si no hay datos??
+                                                                     JOptionPane.showMessageDialog(null,"Pila de servicios vacia");
+                                                                   else{
+                                                                      id=Validaciones.LeerString("Ingrese id servicio a consultar");
+                                                                      objser=(Servicios)objMP.ConsultarDato(objp, objpa,id);
+                                                                      if(objser!=null)
+                                                                          JOptionPane.showMessageDialog(null,"El servicio consultado es:\n"+objser.toString());
+                                                                      }//fin si
+                                                                  break;            
+                                                           case 4: if(objp.IsEmpty()==true)//si no hay datos??
+                                                                     JOptionPane.showMessageDialog(null,"Pila de servicios vacia");
+                                                                   else{
+                                                                      id=Validaciones.LeerString("Ingrese id servicio a eliminar");
+                                                                      objp=objMP.EliminarDato(objp, objpa,id);
+                                                                      }//fin si
+                                                                  break;      
+                                                            case 5: if(objp.IsEmpty()==true)//si no hay datos??
+                                                                     JOptionPane.showMessageDialog(null,"Pila de servicios vacia");
+                                                                   else{
+                                                                      id=Validaciones.LeerString("Ingrese id servicio a modificar");
+                                                                      objp=objMP.ActualizarDatos(objp, objpa,id);
+                                                                      }//fin si
+                                                                  break;              
                                                        }//fin caso opManpi
                                                    }while(opManPi<6);
                                                    break; 
